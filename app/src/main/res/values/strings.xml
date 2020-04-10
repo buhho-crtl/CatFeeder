@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cat feeder</string>
+    <string name="hour">Hour %02d:%02d</string>
+    <string name="amount">Cantidad:%d</string>
+    <string name="format">%1$td/%1$tm/%1$tY</string>
+    <string name="History">Historial</string>
+    <string name="configuration">Configuración</string>
+    <string name="sure_delete">¿Estas seguro que quieres eliminarlo?</string>
+</resources>
