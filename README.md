@@ -5,4 +5,4 @@ For the applications to work you have to add the file google-services.json where
 
 Some screenshots
 
-![](https://im4.ezgif.com/tmp/ezgif-4-3d487789e15b.gif)
+![](https://im4.ezgif.com/tmp/ezgif-4-067e709c8072.gif)
