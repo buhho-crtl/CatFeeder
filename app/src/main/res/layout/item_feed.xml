@@ -55,7 +55,7 @@
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.format(@string/amount, model.config.feed)}"
+                    android:text="@{String.format(@string/amount, model.config != null ? model.config.feed : model.data.feed)}"
                     tools:text="@string/amount" />
 
             </LinearLayout>
