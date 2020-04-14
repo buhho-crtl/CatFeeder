@@ -9,10 +9,8 @@ import adriandp.feedercat.model.Config
 import adriandp.feedercat.model.Data
 import adriandp.feedercat.model.DateError
 import adriandp.feedercat.view.adapter.AdapterFeeder
-import adriandp.feedercat.view.util.DialogTimePick
 import android.content.Context
 import android.util.Log
-import androidx.appcompat.app.AlertDialog
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
 import com.google.firebase.database.*
@@ -75,9 +73,9 @@ class MainActivityVM(context: Context) : BaseObservable(), ListenerDialogTime {
         }
     }
 
-    fun addData(context: Context) {
+/*    fun addData(context: Context) {
         DialogTimePick(context, this)
-    }
+    }*/
 
     override fun acceptDialog(config: Config) {
         val keyNewItem = (0..999999).random().toString()
@@ -102,19 +100,6 @@ class MainActivityVM(context: Context) : BaseObservable(), ListenerDialogTime {
             }
     }
 
-    override fun deleteConfig(
-        config: Config,
-        context: Context,
-        dialog: AlertDialog
-    ) {
-        ref.child(CONFIG_PATH).child(config.key!!).removeValue()
-            .addOnSuccessListener {
-                adapterFeeder.updateListItems(config, type = true)
-            }
-            .addOnFailureListener {
-                Log.d("onClickCard", Log.getStackTraceString(it))
-            }
-    }
 
 }
 

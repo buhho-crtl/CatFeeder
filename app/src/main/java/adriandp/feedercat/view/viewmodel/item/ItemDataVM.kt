@@ -7,7 +7,6 @@ import adriandp.feedercat.model.Data
 import adriandp.feedercat.view.util.DialogTimePick
 import adriandp.feedercat.view.viewmodel.MainActivityVM
 import android.content.Context
-import androidx.appcompat.app.AlertDialog
 import androidx.databinding.BaseObservable
 import java.text.SimpleDateFormat
 import java.util.*
@@ -38,30 +37,16 @@ class ItemDataVM(
     override fun acceptDialog(auxConfig: Config) {
         if (this.config!!.hour != auxConfig.hour ||
             this.config.minutes != auxConfig.minutes ||
-            this.config.feed != auxConfig.feed
+            this.config.feed != auxConfig.feed ||
+            this.config.enable != auxConfig.enable
         ) {
             mainPresenter?.updateConfig(config.apply {
                 this.hour = auxConfig.hour
                 this.minutes = auxConfig.minutes
                 this.feed = auxConfig.feed
+                this.enable = auxConfig.enable
             })
         }
-    }
-
-    override fun deleteConfig(
-        config: Config,
-        context: Context,
-        dialog: AlertDialog
-    ) {
-        AlertDialog.Builder(context)
-            .setCancelable(false)
-            .setMessage(context.getString(R.string.sure_delete))
-            .setPositiveButton(android.R.string.ok) { _, _ ->
-                mainPresenter?.deleteConfig(config, context, dialog)
-                dialog.dismiss()
-            }
-            .setNegativeButton(android.R.string.cancel, null)
-            .show()
     }
 
 }

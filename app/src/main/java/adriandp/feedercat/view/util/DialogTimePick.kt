@@ -18,8 +18,8 @@ class DialogTimePick(
     val view: View = LayoutInflater.from(context).inflate(R.layout.time_picker_dialog, null)
 
     init {
+        view.enableFeed.isChecked = config?.enable ?: false
         view.textFeed.setText(config?.feed?.toString() ?: "0")
-
 
         view.timePicker.apply {
             setIs24HourView(true)
@@ -55,7 +55,8 @@ class DialogTimePick(
                     Config(
                         hour = hour,
                         minutes = minutes,
-                        feed = feed
+                        feed = feed,
+                        enable = view.enableFeed.isChecked
                     )
                 )
 
@@ -63,20 +64,8 @@ class DialogTimePick(
             .setNegativeButton(android.R.string.cancel, null)
             .setCancelable(false)
 
-        if (config != null) {
-            dialog = dialogBuilder.setNeutralButton("Borrar", null)
-                .create()
 
-            dialog.setOnShowListener {
-                val okButton = dialog.getButton(android.app.AlertDialog.BUTTON_NEUTRAL)
-                okButton.setOnClickListener {
-                    listenerDialogTime.deleteConfig(config, context, dialog)
-
-                }
-            }
-        } else {
-            dialog = dialogBuilder.create()
-        }
+        dialog = dialogBuilder.create()
         dialog.show()
     }
 }

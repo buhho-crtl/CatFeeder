@@ -22,6 +22,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:cardElevation="@{model.data != null || (model.config != null &amp;&amp; model.config.enable) ? 5 : 0}"
         android:onClick="@{()-> model.config != null ? model.onClickCard(context,presenter,model.config) : null}"
         app:customHeight="@{model.config != null ? @dimen/card_margin : @dimen/card_normal}">
 

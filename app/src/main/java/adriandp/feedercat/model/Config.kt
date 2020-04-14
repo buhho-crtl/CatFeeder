@@ -8,5 +8,6 @@ class Config(
     @get:Exclude var key: String? = null,
     var minutes: Int = 0,
     var hour: Int = 0,
-    var feed: Int = 0
+    var feed: Int = 0,
+    var enable: Boolean = true
 )
