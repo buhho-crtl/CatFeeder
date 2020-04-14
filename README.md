@@ -5,6 +5,4 @@ For the applications to work you have to add the file google-services.json where
 
 Some screenshots
 
-![](https://raw.githubusercontent.com/buhho-crtl/catFeeder/master/images/photo_2020-04-12_18-52-08.jpg)
-
-![](https://github.com/buhho-crtl/catFeeder/blob/master/images/photo_2020-04-12_18-52-09.jpg)
+![](https://im4.ezgif.com/tmp/ezgif-4-067e709c8072.gif)
