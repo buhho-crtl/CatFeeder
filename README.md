@@ -5,4 +5,4 @@ For the applications to work you have to add the file google-services.json where
 
 Some screenshots
 
-![](https://imgur.com/OFuMaFZ)
+![](https://i.imgur.com/OFuMaFZ.mp4)
